@@ -15,5 +15,12 @@ pipeline {
                 sh "/usr/bin/python3 ${env.WORKSPACE}/calculator-app-py/calculator.py 1 2"
             }
         }
+        stage('Cleaning') {
+            steps{
+                sh """
+                    rm -rf ${env.WORKSPACE}/calculator-app-py/
+                """
+            }
+        }
     }
 }
