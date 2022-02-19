@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Building') {
             steps {
-                sh 'git@github.com:aog11/calculator-app-py.git'
+                sh 'git clone git@github.com:aog11/calculator-app-py.git'
             }
         }
         stage('Testing') {
