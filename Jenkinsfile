@@ -4,8 +4,10 @@ pipeline {
     stages {
         stage('Building') {
             steps {
-                sh 'rm -rf ${env.WORKSPACE}/calculator-app-py/'
-                sh 'git clone git@github.com:aog11/calculator-app-py.git'
+                sh """
+                    rm -rf ${env.WORKSPACE}/calculator-app-py/
+                    git clone git@github.com:aog11/calculator-app-py.git
+                """
             }
         }
         stage('Testing') {
