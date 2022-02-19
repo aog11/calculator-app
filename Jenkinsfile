@@ -7,7 +7,7 @@ pipeline {
                 sh 'git@github.com:aog11/calculator-app-py.git'
             }
         }
-        stage('Testing'){
+        stage('Testing') {
                 sh '/usr/bin/python3 /var/lib/jenkins/calculator-app-py/calculator.py 1 2'
         }
     }
