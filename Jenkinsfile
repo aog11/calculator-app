@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Testing') {
             steps {
-                sh '/usr/bin/python3 /var/lib/jenkins/calculator-app-py/calculator.py 1 2'
+                sh '/usr/bin/python3 ${env.WORKSPACE}/calculator-app-py/calculator.py 1 2'
             }
         }
     }
