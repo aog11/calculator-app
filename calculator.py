@@ -5,4 +5,11 @@ b = 2
 
 result = a + b
 
+#TODO: Substraction
+
+#TODO: Multiplication
+
+#TODO: Division
+
+
 print ('The result is: %s' %(result))
