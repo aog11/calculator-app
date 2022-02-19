@@ -2,10 +2,13 @@ pipeline {
     agent any
 
     stages {
-        stage('Testing') {
+        stage('Building') {
             steps {
-                sh '/usr/bin/python3 /var/lib/jenkins/calculator-app-py/calculator.py 1 2'
+                sh 'git@github.com:aog11/calculator-app-py.git'
             }
+        }
+        stage('Testing'){
+                sh '/usr/bin/python3 /var/lib/jenkins/calculator-app-py/calculator.py 1 2'
         }
     }
 }
