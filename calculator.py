@@ -12,19 +12,19 @@ if len(sys.argv) > 2:
 
 #Addition
 def addition(a, b):
-    return round(a + b,2)
+    return round(a + b ,2)
 
 #Substraction
 def substraction(a, b):
-    return round(a - b,2)
+    return round(a - b ,2)
 
 #Multiplication
 def multiplication(a, b):
-    return round(a * b,2)
+    return round(a * b ,2)
 
 #Division
 def division(a, b):
-    return round(a / b,2)
+    return round(a / b ,2)
 
 #Validate that the received value by input is a number
 def validate_number (num):
@@ -37,6 +37,22 @@ def validate_number (num):
             num = input()
     return float(num)
 
+#Results
+def results (a, b):
+    print('\nWith the entered values {0} and {1} the results, are:\n'.format(a, b))
+
+    result = addition(a,b)
+    print ('The addition result is: %s' %(result))
+
+    result = substraction(a,b)
+    print ('The substraction result is: %s' %(result))
+
+    result = multiplication(a,b)
+    print ('The multiplication result is: %s' %(result))
+
+    result = division(a,b)
+    print ('The division result is: %s' %(result))
+
 #Receive the values by input
 if a is None:
     print('Please insert the first value: ', end ='')
@@ -48,15 +64,4 @@ if b is None:
     b = input()
     b = validate_number(b)
 
-#Results
-result = addition(a,b)
-print ('The addition result is: %s' %(result))
-
-result = substraction(a,b)
-print ('The substraction result is: %s' %(result))
-
-result = multiplication(a,b)
-print ('The multiplication result is: %s' %(result))
-
-result = division(a,b)
-print ('The division result is: %s' %(result))
+results(a, b)
