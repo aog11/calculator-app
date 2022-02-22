@@ -12,19 +12,22 @@ if len(sys.argv) > 2:
 
 #Addition
 def addition(a, b):
-    return round(a + b ,2)
+    return round(a + b, 2)
 
 #Substraction
 def substraction(a, b):
-    return round(a - b ,2)
+    return round(a - b, 2)
 
 #Multiplication
 def multiplication(a, b):
-    return round(a * b ,2)
+    return round(a * b, 2)
 
 #Division
 def division(a, b):
-    return round(a / b ,2)
+    if b == 0:
+        return 'undefined'
+    else:
+        return round(a / b, 2)
 
 #Validate that the received value by input is a number
 def validate_number (num):
@@ -39,7 +42,7 @@ def validate_number (num):
 
 #Results
 def results (a, b):
-    print('\nWith the entered values {0} and {1} the results, are:\n'.format(a, b))
+    print('\nWith the received values {0} and {1}, the results are:\n'.format(a, b))
 
     result = addition(a,b)
     print ('The addition result is: %s' %(result))
@@ -63,5 +66,21 @@ if b is None:
     print('Please insert the second value: ', end ='')
     b = input()
     b = validate_number(b)
+
+#Flipping the operands, only when called by the shell ir order to protect my Jenkins test
+if len(sys.argv) <= 2:
+    
+    print('\nWould you like to flip the operands? (y/n): ', end='')
+    response = input()
+
+    while True:
+        if response.lower() not in ('y','n'):
+            print('Please enter a valid option: ', end='')
+            response = input().lower()
+        elif response == 'y':
+            a, b = b, a
+            break
+        elif response == 'n':
+            break
 
 results(a, b)
