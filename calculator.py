@@ -26,14 +26,26 @@ def multiplication(a, b):
 def division(a, b):
     return a / b
 
+#Validate that the received value by input is a number
+def validate_number (num):
+    while True:
+        if num.isnumeric() == False:
+            print('Please enter a valid number: ', end='')
+            num = input()
+        else:
+            break
+    return int(num)
+
 #Receive the values by input
 if a is None:
-    print('Please inser the first value: ', end ='')
-    a = int(input())
+    print('Please insert the first value: ', end ='')
+    a = input()
+    a = validate_number(a)
 
 if b is None:
-    print('Please inser the second value: ', end ='')
-    b = int(input())
+    print('Please insert the second value: ', end ='')
+    b = input()
+    b = validate_number(b)
 
 #Results
 result = addition(a,b)
