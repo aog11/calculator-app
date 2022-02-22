@@ -12,29 +12,30 @@ if len(sys.argv) > 2:
 
 #Addition
 def addition(a, b):
-    return a + b
+    return round(a + b,2)
 
 #Substraction
 def substraction(a, b):
-    return a - b
+    return round(a - b,2)
 
 #Multiplication
 def multiplication(a, b):
-    return a * b
+    return round(a * b,2)
 
 #Division
 def division(a, b):
-    return a / b
+    return round(a / b,2)
 
 #Validate that the received value by input is a number
 def validate_number (num):
     while True:
-        if num.isnumeric() == False:
+        try:
+            float(num)
+            break
+        except ValueError as v:
             print('Please enter a valid number: ', end='')
             num = input()
-        else:
-            break
-    return int(num)
+    return float(num)
 
 #Receive the values by input
 if a is None:
