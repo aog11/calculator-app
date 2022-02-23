@@ -12,7 +12,7 @@ pipeline {
         }
         stage('Testing') {
             steps {
-                sh "/usr/bin/python3 ${env.WORKSPACE}/calculator-app-py/calculator.py $RANDOM $RANDOM"
+                sh "/usr/bin/python3 ${env.WORKSPACE}/calculator-app-py/calculator.py \$RANDOM \$RANDOM"
             }
         }
         stage('Cleaning') {
