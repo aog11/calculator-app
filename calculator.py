@@ -1,10 +1,10 @@
 #Calculator script
-import sys
+import sys, os
 
 #Adding current folder to path in order to find the new modules
-sys.path.append('./')
+sys.path.append(os.getcwd() + '/calcpy')
 
-import results
+import calcpy
 
 #Initial variables
 a = None
@@ -53,4 +53,4 @@ if len(sys.argv) <= 2:
         elif response == 'n':
             break
 
-results.op_result(a, b)
+calcpy.results.op_result(a, b)
