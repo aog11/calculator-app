@@ -1,5 +1,10 @@
 #Calculator script
-import sys, results
+import sys
+
+#Adding current folder to path in order to find the new modules
+sys.path.append('./')
+
+import results
 
 #Initial variables
 a = None
