@@ -49,8 +49,4 @@ def division(numbers):
             return 'undefined'
         else:
             result/=i
-    #Adding more decimals to the result if the result is too close to 0
-    if round(result,2) == 0.0:
-        return round(result,6)
-    else:
-        return round(result,2)
+    return round(result,6)

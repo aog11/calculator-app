@@ -4,7 +4,7 @@ import operations
 
 #Results
 def op_result (numbers):
-    print('\nWith the received values, the results are:\n')
+    print('\nWith the received values {0}, the results are:\n'.format(numbers))
 
     result = operations.addition(numbers)
     print ('The addition result is: %s' %(result))

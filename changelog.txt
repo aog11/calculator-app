@@ -1,0 +1,13 @@
+calc-v1
+* Receive two numbers from input and later, add, substract multiply and divide them
+* Option to flip the opreands
+
+calc-v2
+25/02/2022
+* Receive the amount of opreands to work with
+* Expansion of the logic for the math operations
+* Created numbers_validation.py to handle the validation of the numbers obtained by input
+* Condition to generate the operands in random fashion if the script is called from the Jenkins user
+* Spelling
+* Displaying the list of numbers in the first message of results.py
+* Modified Jenkinsfile to remove the use of $RANDOM during script call in Testing stage
