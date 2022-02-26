@@ -11,3 +11,4 @@ calc-v2
 * Spelling
 * Displaying the list of numbers in the first message of results.py
 * Modified Jenkinsfile to remove the use of $RANDOM during script call in Testing stage
+* Added environment variable to Jenkinsfile for the branch to clone in Building stage

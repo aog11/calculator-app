@@ -1,12 +1,15 @@
 pipeline {
     agent any
+    environment {
+        BRANCH='calc-v2'
+    }
 
     stages {
         stage('Building') {
             steps {
                 sh """
                     rm -rf ${env.WORKSPACE}/calculator-app-py/
-                    git clone git@github.com:aog11/calculator-app-py.git
+                    git clone -b $BRANCH git@github.com:aog11/calculator-app-py.git
                 """
             }
         }
