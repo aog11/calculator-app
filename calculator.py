@@ -6,51 +6,24 @@ sys.path.append(os.getcwd() + '/calcpy')
 
 import calcpy
 
-#Initial variables
-a = None
-b = None
+#Receive the amount of opereands by input
+print('Please enter the amount of numbers to compute: ', end='')
+numbers_amount = calcpy.numbers_validation.validate_operands_number(input())
 
-#Taking values sent by a "lazy" Jenkins implementation
-if len(sys.argv) > 2:
-    a = int(sys.argv[1])
-    b = int(sys.argv[2])
+#Receive the numbers
+numbers = []
 
-#Validate that the received value by input is a number
-def validate_number (num):
-    while True:
-        try:
-            float(num)
-            break
-        except ValueError as v:
-            print('Please enter a valid number: ', end='')
-            num = input()
-    return float(num)
-
-#Receive the values by input
-if a is None:
-    print('Please insert the first value: ', end ='')
-    a = input()
-    a = validate_number(a)
-
-if b is None:
-    print('Please insert the second value: ', end ='')
-    b = input()
-    b = validate_number(b)
-
-#Flipping the operands, only when called by the shell ir order to protect my Jenkins test
-if len(sys.argv) <= 2:
+for i in range(numbers_amount):
     
-    print('\nWould you like to flip the operands? (y/n): ', end='')
-    response = input()
+    #Printing a differrent message based on the loop
+    if i == 0:
+        print('Please enter the first number: ', end='')
+    elif i == numbers_amount - 1:
+        print('Please enter the final number: ', end='')
+    else:
+        print('Please enter the next number: ', end='')
+    
+    #Receiving the number
+    numbers.append(calcpy.numbers_validation.validate_number(input()))
 
-    while True:
-        if response.lower() not in ('y','n'):
-            print('Please enter a valid option: ', end='')
-            response = input().lower()
-        elif response == 'y':
-            a, b = b, a
-            break
-        elif response == 'n':
-            break
-
-calcpy.results.op_result(a, b)
+calcpy.results.op_result(numbers)

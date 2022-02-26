@@ -3,17 +3,17 @@
 import operations
 
 #Results
-def op_result (a, b):
-    print('\nWith the received values {0} and {1}, the results are:\n'.format(a, b))
+def op_result (numbers):
+    print('\nWith the received values, the results are:\n')
 
-    result = operations.addition(a,b)
+    result = operations.addition(numbers)
     print ('The addition result is: %s' %(result))
 
-    result = operations.substraction(a,b)
+    result = operations.substraction(numbers)
     print ('The substraction result is: %s' %(result))
 
-    result = operations.multiplication(a,b)
+    result = operations.multiplication(numbers)
     print ('The multiplication result is: %s' %(result))
 
-    result = operations.division(a,b)
+    result = operations.division(numbers)
     print ('The division result is: %s' %(result))
