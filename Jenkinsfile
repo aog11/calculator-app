@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        BRANCH='calc-v2'
+        BRANCH='upgrades'
     }
 
     stages {
