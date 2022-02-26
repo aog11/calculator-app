@@ -12,7 +12,7 @@ import calcpy
 numbers = []
 
 #Random numbers for testing of Jenkins pipeline
-if getuser == 'jenkins':
+if getuser().lower() == 'jenkins':
     numbers_amount = random.randint(1, 10)
 
     for i in range(numbers_amount):
