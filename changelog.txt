@@ -1,0 +1,4 @@
+calc-v1
+* Receive two numbers from input and later, add, substract multiply and divide them
+* Option to flip the opreands
+* Modified Jenkinsfile to specify the branch in the Tesing stage
